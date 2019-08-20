@@ -18,10 +18,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         textTest.setText("0")
 
-        //
+        //без фабрики
         //var myModel = ViewModelProviders.of(this).get(MyViewModel::class.java)
         //c фабрикой
-        var myModel = ViewModelProviders.of(this).get(MyViewModel::class.java)
+        val myModel = ViewModelProviders.of(this, MyModelFactory(interactor)).get(MyViewModel::class.java)
 
         //
         val data: LiveData<Int> = myModel.data
