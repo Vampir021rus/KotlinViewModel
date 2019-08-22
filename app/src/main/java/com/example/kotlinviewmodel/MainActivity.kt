@@ -1,5 +1,6 @@
 package com.example.kotlinviewmodel
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -34,6 +35,11 @@ class MainActivity : AppCompatActivity() {
         btnIncriment.setOnClickListener(){
             val i = textTest.text.toString().toInt()
             myModel.incValue(i)
+        }
+
+        btnOpenActiviteRetrofit.setOnClickListener(){
+            val intent= Intent (this,RetrofitActivity::class.java)
+            startActivity(intent)
         }
     }
 }

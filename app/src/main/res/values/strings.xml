@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">KotlinViewModel</string>
+    <string name="btnInc">INC</string>
 </resources>
