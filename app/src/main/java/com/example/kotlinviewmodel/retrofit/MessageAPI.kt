@@ -5,7 +5,7 @@ import retrofit2.Call
 import retrofit2.http.Path
 
 public interface MessageAPI {
-    @GET("message1.json")
+    @GET("messages1.json")
     fun getMessage() :Call<List<Message>>
 
 
