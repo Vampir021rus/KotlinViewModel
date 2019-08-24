@@ -37,10 +37,13 @@ class RetrofitActivity : AppCompatActivity() {
 
         //с помощью асиннхронного метода делаем запрос
         messages.enqueue(object : Callback<List<Message>> {
+            //метод в котором пришел ответ, ответ может быть удачным или создержать коды ошибок типа 404
             override fun onResponse(call: Call<List<Message>>, response: Response<List<Message>>) {
+                //проверка на точ то ответ пришел удачный без всяких косяков типа 404 и тд
                 if (response.isSuccessful) {
+                   //если я правильно понял в response хранится весь ответ в формате json
+                    // но чет не очень понял что хранить call
                     var str: String = ""
-
                     var listMsg = response.body()
                     var length = listMsg!!.size
 
@@ -68,6 +71,7 @@ class RetrofitActivity : AppCompatActivity() {
                 }
             }
 
+            //метод если есть какой то косяк с запросом
             override fun onFailure(call: Call<List<Message>>, t: Throwable) {
                 Log.v("Error2", t.toString())
             }
